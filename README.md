@@ -1,1 +1,2 @@
-# POSTECH_WebProgramming
+# Computer Science
+
