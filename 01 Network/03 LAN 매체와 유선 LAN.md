@@ -8,8 +8,8 @@
 >매체의 종류로 선으로 연결되는 유도매체와 선 없이 연결되는 비유도 매체로 나누어 학습
 >
 >유선 LAN : Ethernet
->
->
+
+
 
 #### 1. 전송매체의 종류
 
@@ -98,7 +98,114 @@
 
     <img src = "\Image\03\12.png">
 
-  - LAN에서 **흐름제어, 에러제어 등 각종 제어에 대한 행위를 수행**
+  - LAN에서 **흐름제어, 에러제어 등 각종 제어에 대한 행위를 수행** : LLC(1개 공통계층) + MAC(매체 별 여러 개)
     - **이 부계층을 LLC(Logical Link Control)**라 함
     - LLC는 **모든 LAN에서 공통**의 계층
+  
+  - IEEE 802 protocol working group
+  
+    <img src = "\Image\03\13.png">
+  
+  - 초기 이더넷은 10Mbps를 제공하였고 이후 Fast Ethernet(100Mbps), Gigabit Ethernet(1Gbps), ten-Gigabit Ethernet(10Gbps, 텐지)으로 **발전**
+  
+    - 이더넷은 속도만 빨라지고 기존의 기능들은 그대로
+  
+    <img src = "\Image\03\14.png">
+  
+- Ethernet
+
+  - MAC 프레임
+    - 이더넷 프레임은 7개의 필드로 구성(Physical layer header를 생략하기도 함)
+      - 프레임 길이 : 최소 64bytes ~ 최대 1518bytes
+    - Preamble : 프레임이 곧 도착하니 준비하라는 의미
+    - Start frame dealimiter (SFD) : 프레임의 시작을 알림
+    - Destination address (DA) : 목적지 주소
+    - Source address(SA) : 송신자 주소
+    - Length/type : 데이터 필드의 길이, 네트워크 계층 프로토콜의 종류
+    - 데이터 : 최소 46바이트에서 최대 1500바이트까지 가능
+    - CRC는 에러를 검추하는 기능을 수행
+
+  <img src = "\Image\03\15.png">
+
+  - 주소 지정
+    - 각 시스템은 NIC(Network Interface Card)를 갖고 있는데 LAN 카드라고도 불림
+    - LAN 카드에는 고유주소가 설정되어 있음(*받는 사람이 정확 -> 유니캐스트*)
+      - **MAC 주소, Ethernet 주소, 하드웨어 주소라고 함**
+      - 6바이트로 이루어져 있으며 보통 16진수(f)로 표기
+      - 브로드캐스트 주소는 모든 비트가 '1'인 ff:ff:ff:ff:ff:ff로 구성
+    
+    <img src = "\Image\03\16.png" width = "500">
+    
+  - MAC 프로토콜  : CSMA/CD
+    
+    - 이더넷은 1-persistent CSMA/CD를 사용
+    
+    <img src = "\Image\03\17.png" width = "600">
+    
+  - 이더넷의 형태
+
+    - 숫자 10 : 속도 (10Mega, 1000 = 1Giga)
+    - Base : Base band 신호 방식(디지털 신호 그대로 보냄)
+    - 마지막 숫자/문자 
+      - 숫자 : 케이블 길이( 5: 500m, 2: 200m)
+      - 문자 : **T**(Twisted cable), **F**(Fiber Optic Cable)
+
+    <img src = "\Image\03\18.png" width = "600">
+
+  - 10Base5 : Thick Ethernet
+    - 처음에 만들어진 이더넷
+    - Thick Ethernet 또는 Thicknet으로 불림(케이블이 두꺼움)
+      - 동축케이블을 여러 장치들이 공유매체로 사용하는 LAN
+      - 10Mbps의 속도, 베이스밴드 신호방식, 한 세그먼트가 500m에 달함
+    - 케이블에 여러 장치가 연결되어(버스) 데이터를 공유해 충돌이 발생
+    
+    <img src = "\Image\03\19.png" width = "600">
+    
+  - 10Base2 : Thin Ethernet
+    - 두 번째 개발된 이더넷
+    - thin Ethernet 또는 Cheapernet이라고 불림
+      - 동축케이블을 여러 장치들이 공유매체로 사용하는 LAN
+      - 두께가 10BASE5보다 얇음
+      - 10Mbps의 속도, 베이스밴드 신호방식, 한 세그먼트가 185m에 달함
+    
+    <img src = "\Image\03\20.png" width = "600">
+    
+  - 10BaseT : Twisted-Pair Ethernet
+    - 허브 : LAN에서 많이 사용되는 네트워크 장치(UTP케이블 사용)
+    - 보통 포트 수에 따라서 16포트 허브, 24포트 허브 등으로 불림
+    
+    <img src = "\Image\03\21.png" width = "600">
+    
+  - 10Base-F : Fiber Ethernet
+    
+    - 시스템과 허브를 연결하는 케이블로서 광 케이블을 이용
+    
+    <img src = "\Image\03\22.png" width = "600">
+
+- Fast Ethernet
+
+  - 기존의 이더넷보다 10배 빠름, **100Mbps**를 제공
+  - Fast Ethernet은 **기존 이더넷과 호환 가능**
+  - **자동협상(Autonegotiation) 기능**으로 속도 등을 조정
+  - 개발된 형태는 3종류
+    - TX : 송수신 가능
+    - T4 : 송수신 불가능
+
+  <img src = "\Image\03\23.png" width = "600">
+
+- Gigabit Ethernet
+
+  - 속도가 1Gbps로 상향되었으나 기존 이더넷이나 고속 이더넷과 서로 호환 가능
+    - 48비트 주소, 프레임 형태, 최소/최대 프레임 크기, 자동협상기능 등을 지원
+  - 광섬유나 TP를 이용한 개발된 형태를 갖고 있음
+
+  <img src = "\Image\03\24.png" width = "600">
+
+- Ten - Gigabit Ethernet
+
+  - 10 Gbps로 속도가 상향
+  - **기존 이더넷, 고속 이더넷, 기가비트 이더넷과 서로 호환되도록 설계**
+    - 48비트 주소, 프레임 형태, 최소/최대 프레임 크기 등을 지원
+
+
 
