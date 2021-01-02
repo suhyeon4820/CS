@@ -5,7 +5,7 @@
 - 강의 내용 :  정보통신이나 컴퓨터 네트워크 관련 개념과 기술적 요소(Switching, LAN, 연결장치, IP주소, 라우팅 등)에 대한 기초지식을 강의
 - 출처 : 네트워크 기초, 성균관대학교, K-MOOC
 
-<img src = "01 Network\image\certificate.png" width = "500">
+<img src = "01 Network/image/certificate.png" width = "500">
 
 1. [네트워크의 개념](https://github.com/suhyeon4820/CS/blob/master/01%20Network/01%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9D%98%20%EA%B0%9C%EB%85%90.md)
 2. [스위칭과 다중접속 프로토콜](https://github.com/suhyeon4820/CS/blob/master/01%20Network/02%20%EC%8A%A4%EC%9C%84%EC%B9%AD%EA%B3%BC%20%EB%8B%A4%EC%A4%91%EC%A0%91%EC%86%8D%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C.md)
