@@ -47,7 +47,7 @@
   - [5주차] 명령어 실행 
   - [6주차] 인터럽트(Interrupt)와 서브루틴(Subroutine), 파이프라이닝(Pipelining) 
   - [7주차] 제어 유니트 
-  - [8주차] 중간고사 
+  - [8주차] 중간고사
   - [9주차] Main Memory
   - [10주차] Cache 
   - [11주차] Secondary Storage Device 
