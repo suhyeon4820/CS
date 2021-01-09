@@ -40,7 +40,7 @@
 
 - 커리큘럼
 
-  - [1주차] 컴퓨터구조 개요 
+  - [[1주차] 컴퓨터구조 개요](https://github.com/suhyeon4820/CS/blob/master/03%20Computer%20Architecture/01.%20Computer%20System%20Structure.md)
   - [2주차] ALU: Logic Operations 
   - [3주차] ALU: Arithmetic Operations 
   - [4주차] CPU의 기본 구성 및 명령어 세트 
